@@ -54,8 +54,8 @@ def display_cart(cart):
     for product_name, product_price, quantity in cart:
         item_cost = product_price * quantity
         total_cost += item_cost
-        print(f"{product_name} - ${product_price} x {quantity} = ${item_cost}")  # 确保不使用小数点
-    print(f"Total cost: ${total_cost}")  # 确保不使用小数点
+        print(f"{product_name} - ${product_price} x {quantity} = ${item_cost}")  
+    print(f"Total cost: ${total_cost}")  
     return total_cost
 
 def generate_receipt(name, email, cart, total_cost, address):
@@ -64,7 +64,7 @@ def generate_receipt(name, email, cart, total_cost, address):
     print(f"Email: {email}")
     for product_name, product_price, quantity in cart:
         item_cost = product_price * quantity
-        print(f"{quantity} x {product_name} - ${product_price:.2f} = ${item_cost:.2f}")  # 修改这里，确保格式一致
+        print(f"{quantity} x {product_name} - ${product_price:.2f} = ${item_cost:.2f}")  
     print(f"Total: ${total_cost:.2f}")
     print(f"Delivery Address: {address}")
     print("Your items will be delivered in 3 days. Payment will be accepted upon successful delivery.")
@@ -90,7 +90,7 @@ def main():
     cart = []
     
     while True:
-        categories = display_categories()  # 获取类别列表
+        categories = display_categories()  
         category_choice = input("Select a category by number: ")
         if not category_choice.isdigit() or int(category_choice) not in range(1, len(categories) + 1):
             print("Invalid choice. Please try again.")
